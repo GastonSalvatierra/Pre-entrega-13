@@ -1,0 +1,23 @@
+{"level":"error","message":"ESTO ES UN ERROR ROTUNDOOOOOOOOOOO"}
+{"level":"error","message":"ESTO ES UN ERROR ROTUNDOOOOOOOOOOO"}
+warning: TEST DE PRUEBA PARA LOGGER --- warning
+warning: TEST DE PRUEBA PARA LOGGER --- warning
+warning: TEST DE PRUEBA PARA LOGGER --- warning
+warning: TEST DE PRUEBA PARA LOGGER --- warning
+{"level":"warning","message":"TEST DE PRUEBA PARA LOGGER --- warning"}
+{"level":"error","message":"TEST DE PRUEBA PARA LOGGER --- error "}
+{"level":"fatal","message":"TEST DE PRUEBA PARA LOGGER --- fatal"}
+{"level":"warning","message":"TEST DE PRUEBA PARA LOGGER --- warning"}
+{"level":"error","message":"TEST DE PRUEBA PARA LOGGER --- error "}
+{"level":"fatal","message":"TEST DE PRUEBA PARA LOGGER --- fatal"}
+warning: TEST DE PRUEBA PARA LOGGER --- warning
+warning: TEST DE PRUEBA PARA LOGGER --- warning
+warning: TEST DE PRUEBA PARA LOGGER --- warning
+error: TEST DE PRUEBA PARA LOGGER --- error 
+fatal: TEST DE PRUEBA PARA LOGGER --- fatal
+
+
+//mongodb+srv://gastonsalvatierra@cluster0.w1qjysl.mongodb.net/error: Esto es un error en getProductsPage
+error: Esto es un error en getProductsPage
+error: Esto es un error en getProductsPage
+error: Esto es un error en getProductsPage

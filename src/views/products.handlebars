@@ -1,0 +1,47 @@
+{{#if isValid}}
+<div>
+    <h1>BIENVENIDO {{user}} </h1>
+    <h2>{{email}}</h2>
+    <h2>USUARIO</h2>
+    {{#each docs}}
+    <div>
+        <p>Titulo: {{this.title}}</p>
+        <p>Descripcion: {{this.description}}</p>
+        <p>Categoria: {{this.category}}</p>
+        <p>Codigo: {{this.code}}</p>
+        <button class="addProduct">agregar al carrito</button>
+    </div>
+    <br />
+    {{/each}}
+</div>
+<br />
+
+<div>
+    {{#if hasPrevPage}}
+    <a href={{this.prevLink}}>
+        << Anterior </a>
+            {{/if}}
+
+            {{!-- numero de pagina --}}
+            &nbsp;
+            {{this.page}}
+            &nbsp;
+
+            {{#if hasNextPage}}
+            <a href={{this.nextLink}}>
+                Siguiente >> </a>
+            {{/if}}
+            <br>
+            <br>
+            <br>
+            <br>
+            <button id="closeAll" type="button">Cerrar sesion</button>
+
+</div>
+{{else}}
+<h1>No hay productos para mostrar</h1>
+{{/if}}
+
+
+
+<script src="/js/logout.js"></script>

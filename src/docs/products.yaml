@@ -1,0 +1,200 @@
+paths:
+  /api/products/:
+    get:
+      summary: Obtiene todos los productos disponibles en la aplicación.
+      tags:
+        - Products
+      responses:
+        "200":
+          description: La opercion fue exitosa!, se retorna un arrglo con los productos.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#components/schemas/Product'
+        "400":
+          description: Se envió un dato no esperado.
+        "500":
+          description: Error inesperado del servidor, no se puede manejar el proceso.
+
+
+
+
+
+  /api/products/pages/{page}:
+    get:
+      summary: Renderiza la vista de productos si existe una sesion activa.
+      tags:
+        - Vista de productos en sesion
+      parameters:
+        - name: page
+          in: path
+          required: true
+          description: Numero de pagina que desea ver al iniciar sesion.
+          schema:
+            $type: String
+      responses:
+        "200":
+          description: La operacion fue exitosa!.
+        "400":
+          description: Se envió un dato no esperado.
+        "500":
+          description: Error inesperado del servidor, no se puede manejar el proceso.
+
+
+  /api/products:
+    post:
+      summary: Se agrega un producto verificando que vengan todos los datos requeridos.
+      tags:
+        - Agregar producto
+      requestBody:
+         required: true
+         content:
+          application/json:
+            schema:
+              $ref: '#/components/requestBodies/NewProduct'
+      responses:
+        "200":
+          description: La operacion fue exitosa!.
+        "400":
+          description: Se envió un dato no esperado.
+        "500":
+          description: Error inesperado del servidor, no se puede manejar el proceso.
+
+
+
+  /api/products/{pid}:
+    put:
+      summary: Se actuliza un producto en especifico segun su id.
+      tags:
+        - actulizar producto
+      content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#components/schemas/Product'
+      responses:
+        "200":
+          description: La operacion fue exitosa!.
+        "400":
+          description: Se envió un dato no esperado.
+        "500":
+          description: Error inesperado del servidor, no se puede manejar el proceso.
+
+
+
+
+  /api/products/{pid2}:
+    delete:
+      summary: Se elimina un producto en especifico segun su id.
+      tags:
+        - eliminar producto.
+      parameters:
+        - name: page
+          in: path
+          required: true
+          description: Numero de producto que desea eliminar.  
+      responses:
+        "200":
+          description: La operacion fue exitosa!.
+        "400":
+          description: Se envió un dato no esperado.
+        "500":
+          description: Error inesperado del servidor, no se puede manejar el proceso.
+
+  
+
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        _id:
+          type: ObjectId
+          description: Id autogenerado de Mongo.
+        title: 
+          type: String
+          description: Titulo del producto
+        description: 
+          type: String
+          description: Descripcion del producto
+        code: 
+          type: String
+          description: Codigo del producto
+        price: 
+          type: String
+          description: Tipo de producto
+        status: 
+          type: String
+          description: Estado del producto
+        stock: 
+          type: String
+          description: Stock del producto
+        category: 
+          type: String
+          description: Categoria del producto
+        thumbnail: 
+          type: String
+          description: imagenes del producto
+        owner: 
+          type: String
+          description: comprador del producto
+      example:
+        _id: "64e7a3ad8e78e05a9b1263a0"
+        title: "Producto de ejemplo-1"
+        description: "Descripción del producto-1"
+        code: 23
+        price: 1.99
+        status: true
+        stock: 2
+        category: "Electrónica"
+        thumbnail: ["thumbnail_url_1","thumbnail_url_2"]
+
+  requestBodies:
+    NewProduct:
+      type: object
+      required:
+       -title
+       -description
+       -code
+       -price
+       -status
+       -stock,
+       -category
+       -thumbnail
+      properties:
+        title:
+          type: string
+          description: The title of the product.
+        description:
+          type: number
+          description: The price of the product.
+        code:
+          type: number
+          description: The price of the product.
+        price:
+          type: number
+          description: The price of the product.
+        status:
+          type: number
+          description: The price of the product.
+        stock:
+          type: number
+          description: The price of the product.
+        category:
+          type: number
+          description: The price of the product.
+        thumbnail:
+          type: number
+          description: The price of the product.
+
+     
+     
+     
+     
+     
+    
+    
+    
